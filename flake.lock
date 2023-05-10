@@ -358,11 +358,11 @@
         "snowfall-lib": "snowfall-lib_2"
       },
       "locked": {
-        "lastModified": 1683724677,
-        "narHash": "sha256-64aGEIxpArpyGTvpz+SKE3XkkEwhksLAgxORuoB+XIU=",
+        "lastModified": 1683724995,
+        "narHash": "sha256-d4kOo5IrBy5AnFSqbvQW8fYeFwPSPfwq2aicHBM5iB0=",
         "owner": "arclight443",
         "repo": "constellation-neovim",
-        "rev": "a89a30fc87a750263089c655d138c31ef4768c53",
+        "rev": "9a1601f3d4b7a6dabdf4d7c5477db3dbdd1125e9",
         "type": "github"
       },
       "original": {
