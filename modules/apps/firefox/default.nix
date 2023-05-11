@@ -143,12 +143,23 @@ let
       inherit name id;
       settings =
         {
+          #General
           "browser.uidensity" = "compact";
           "browser.rememberSignons" = false; # Disable password manager
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "browser.aboutwelcome.enabled" = false;
           "browser.meta_refresh_when_inactive.disabled" = true;
           "ui.key.menuAccessKeyFocuses" = false;
+
+          #Wavefox
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "layout.css.color-mix.enabled" = true;
+          "layout.css.has-selector.enabled" = true;
+          "userChrome.TabCorners.Option6.Enabled" = true;
+          "userChrome.CompactContextMenu-Enabled" = true;
+          "userChrome.FilledMenuIcons-Enabled" = true;
+          "userChrome.OneLine.NavBarFirst.Enabled" = true;
+
+
         }
         // (
           if profile ? settings
@@ -161,7 +172,7 @@ let
         else false;
 
       userChrome = ''
-        @import "${pkgs.constellation.firefox-cascade}/chrome/userChrome.css";
+        @import "${pkgs.constellation.firefox-wavefox}/chrome/userChrome.css";
       '';
 
       extensions =

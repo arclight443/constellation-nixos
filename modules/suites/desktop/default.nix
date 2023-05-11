@@ -18,7 +18,7 @@ in
       };
 
       cli-apps = {
-        ncmpcpp = enabled;
+        #ncmpcpp = enabled;
         ddcutil = enabled;
         ranger = enabled;
         ytdlp = enabled;

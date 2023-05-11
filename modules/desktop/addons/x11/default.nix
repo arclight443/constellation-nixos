@@ -49,6 +49,7 @@ in
       enable = true;
       mouse.accelProfile = "flat";
       mouse.accelSpeed = "0";
+      touchpad.naturalScrolling = true;
     };
 
     constellation.home.extraOptions = {
