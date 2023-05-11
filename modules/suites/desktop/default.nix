@@ -27,6 +27,7 @@ in
       apps = {
         keepassxc = enabled;
         firefox = enabled;
+        microsoft-edge = enabled;
         tor-browser = enabled;
         imv = enabled;
         mpv = enabled;
