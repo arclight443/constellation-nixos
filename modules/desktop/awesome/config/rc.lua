@@ -20,6 +20,7 @@ local naughty       = require("naughty")
 local lain          = require("lain")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local sharedtags    = require("sharedtags")
 local mytable       = awful.util.table or gears.table -- 4.{0,1} compatibility
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
@@ -90,7 +91,7 @@ local run_on_start_up                  = {
 }
 
 awful.util.terminal                    = terminal
-awful.util.tagnames                    = { "1", "2", "3", "4", "5" }
+awful.util.tagnames                    = {}
 awful.layout.layouts                   = {
 	awful.layout.suit.tile.right,
 	awful.layout.suit.spiral.dwindle,
@@ -117,6 +118,19 @@ awful.layout.layouts                   = {
 	--lain.layout.termfair,
 	--lain.layout.termfair.center
 }
+
+-- Shared tags
+local tags                             = sharedtags({
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "ﴃ", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+	{ name = "", layout = awful.layout.layouts[1] },
+})
 
 lain.layout.termfair.nmaster           = 3
 lain.layout.termfair.ncol              = 1
@@ -184,8 +198,6 @@ end
 
 awful.spawn.with_shell(
 	"ddcutil -d 2 setvcp 60 0x12; xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --off; pkill barrier; barrierc --disable-crypto 192.168.2.40:24800")
---awful.spawn.with_shell("pkill barrier; barrierc --disable-crypto 192.168.2.40:24800")
---awful.spawn.with_shell("pgrep barrier || barriers --config ~/.config/barrier/home.conf --disable-crypto")
 
 -- This function implements the XDG autostart specification
 --[[
@@ -305,9 +317,9 @@ globalkeys = mytable.join(
 		{ description = "show help", group = "awesome" }),
 
 	-- Tag browsing
-	awful.key({ altkey, }, "Left", awful.tag.viewprev,
+	awful.key({ altkey, }, "[", awful.tag.viewprev,
 		{ description = "view previous", group = "tag" }),
-	awful.key({ altkey, }, "Right", awful.tag.viewnext,
+	awful.key({ altkey, }, "]", awful.tag.viewnext,
 		{ description = "view next", group = "tag" }),
 	awful.key({ altkey, }, "Escape", awful.tag.history.restore,
 		{ description = "go back", group = "tag" }),
@@ -701,9 +713,9 @@ for i = 1, 9 do
 		awful.key({ altkey }, "#" .. i + 9,
 			function()
 				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
+				local tag = tags[i]
 				if tag then
-					tag:view_only()
+					sharedtags.viewonly(tag, screen)
 				end
 			end,
 			{ description = "view tag #" .. i, group = "tag" }),
@@ -711,9 +723,9 @@ for i = 1, 9 do
 		awful.key({ altkey, "Control" }, "#" .. i + 9,
 			function()
 				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
+				local tag = tags[i]
 				if tag then
-					awful.tag.viewtoggle(tag)
+					sharedtags.viewtoggle(tag, screen)
 				end
 			end,
 			{ description = "toggle tag #" .. i, group = "tag" }),
@@ -721,27 +733,26 @@ for i = 1, 9 do
 		awful.key({ altkey, "Shift" }, "#" .. i + 9,
 			function()
 				if client.focus then
-					local tag = client.focus.screen.tags[i]
+					local tag = tags[i]
 					if tag then
 						client.focus:move_to_tag(tag)
 						local screen = awful.screen.focused()
-						local tag2 = screen.tags[i]
-						tag2:view_only()
+						sharedtags.viewonly(tag, screen)
 					end
 				end
 			end,
-			{ description = "move focused client to tag #" .. i, group = "tag" })
-	-- Toggle tag on focused client.
-	--		awful.key({ altkey, "Control", "Shift" }, "#" .. i + 9,
-	--			function()
-	--				if client.focus then
-	--					local tag = client.focus.screen.tags[i]
-	--					if tag then
-	--						client.focus:toggle_tag(tag)
-	--					end
-	--				end
-	--			end,
-	--			{ description = "toggle focused client on tag #" .. i, group = "tag" })
+			{ description = "move focused client to tag #" .. i, group = "tag" }),
+		-- Toggle tag on focused client.
+		awful.key({ altkey, "Control", "Shift" }, "#" .. i + 9,
+			function()
+				if client.focus then
+					local tag = tags[i]
+					if tag then
+						client.focus:toggle_tag(tag)
+					end
+				end
+			end,
+			{ description = "toggle focused client on tag #" .. i, group = "tag" })
 	)
 end
 
@@ -834,7 +845,12 @@ awful.rules.rules = {
 	--   properties = { screen = 1, tag = "2" } },
 	{
 		rule = { class = "mpv" },
-		properties = { maximized = true }
+		properties = { maximized = true, tag = tags[4] }
+	},
+
+	{
+		rule = { class = "krita" },
+		properties = { tag = tags[5] }
 	},
 }
 

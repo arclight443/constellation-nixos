@@ -66,7 +66,7 @@ let
         arkenfox.main
         {
           "0100"."0102"."browser.startup.page".value = 3;
-          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=";
+          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
         }
       ];
     };
@@ -78,7 +78,7 @@ let
         arkenfox.main
         {
           "0100"."0102"."browser.startup.page".value = 3;
-          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=";
+          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
         }
       ];
     };
@@ -90,7 +90,7 @@ let
         arkenfox.main
         {
           "0100"."0102"."browser.startup.page".value = 3;
-          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=";
+          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
         }
       ];
     };
@@ -102,7 +102,7 @@ let
         arkenfox.main
         {
           "0100"."0102"."browser.startup.page".value = 3;
-          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=";
+          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
         }
       ];
     };
@@ -114,7 +114,7 @@ let
         arkenfox.main
         {
           "0100"."0102"."browser.startup.page".value = 1;
-          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&kp=-2&q=";
+          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
           "1200"."1201"."security.ssl.require_safe_negotiation".value = false;
         }
         arkenfox.safe
@@ -128,7 +128,7 @@ let
         arkenfox.main
         {
           "0100"."0102"."browser.startup.page".value = 1;
-          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=";
+          "0100"."0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
         }
         arkenfox.hardened
       ];
@@ -172,7 +172,7 @@ let
         else false;
 
       userChrome = ''
-        @import "${pkgs.constellation.firefox-wavefox}/chrome/userChrome.css";
+        @import "${pkgs.constellation.firefox-cascade}/chrome/userChrome.css";
       '';
 
       extensions =

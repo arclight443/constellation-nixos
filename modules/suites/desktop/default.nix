@@ -18,21 +18,27 @@ in
       };
 
       cli-apps = {
-        #ncmpcpp = enabled;
+        ncmpcpp = enabled;
         ddcutil = enabled;
         ranger = enabled;
         ytdlp = enabled;
+        chatblade = enabled;
       };
 
       apps = {
         keepassxc = enabled;
         firefox = enabled;
+        krita = enabled;
         microsoft-edge = enabled;
         tor-browser = enabled;
         imv = enabled;
         mpv = enabled;
         mullvad = enabled;
         thunar = enabled;
+      };
+
+      services = {
+        bluetooth = enabled;
       };
     };
   };

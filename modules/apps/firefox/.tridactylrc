@@ -1,14 +1,13 @@
 " General Settings
 
-set homepages [ "https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=" ]
-set newtab https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=
+set homepages [ "https://duckduckgo.com/" ]
+set newtab https://duckduckgo.com/
 
 set configversion 2.0
 set theme midnight
 
 set searchurls.gg https://google.com/search?q=
-set searchurls.ddg https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&q=
-set searchurls.nsfw https://duckduckgo.com/?kae=d&kak=-1&kao=-1&kaq=-1&ks=m&kw=n&ko=d&kau=-1&kax=-1&k1=-1&kk=-1&kaj=m&kap=-1&kad=en_US&kz=1&kav=-1&kt=Hack+Nerd+Font&kn=1&k7=282828&kj=3c3836&km=l&kaa=83a598&k18=1&k21=504945&kp=-2&q=
+set searchurls.ddg https://duckduckgo.com/?q=
 set searchurls.sp https://startpage.com/do/search?language=english&cat=web&query=
 set searchurls.qw https://www.qwant.com/?q=
 

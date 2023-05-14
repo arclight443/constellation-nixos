@@ -18,17 +18,26 @@ in
 
     environment.systemPackages = with pkgs; [ font-manager ];
 
-    fonts.fonts = with pkgs;
-      [
-        roboto
-        material-icons
-        meslo-lgs-nf
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-cjk-serif
-        noto-fonts-emoji
-        noto-fonts-extra
-        (nerdfonts.override { fonts = [ "Hack" "FiraCode" "Iosevka" ]; })
-      ] ++ cfg.fonts;
+    fonts = {
+      fonts = with pkgs;
+        [
+          roboto
+          material-icons
+          meslo-lgs-nf
+          kanit-font
+          noto-fonts
+          noto-fonts-cjk-sans
+          noto-fonts-cjk-serif
+          (nerdfonts.override { fonts = [ "Hack" "FiraCode" "Iosevka" ]; })
+        ] ++ cfg.fonts;
+      fontconfig = {
+        defaultFonts = {
+          serif = [ "Kanit" "Noto" ];
+          sansSerif = [ "Kanit" "Noto" ];
+          monospace = [ "Noto" ];
+        };
+      };
+    };
+
   };
 }
