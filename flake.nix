@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -48,12 +49,15 @@
       package-namespace = "constellation";
       channels-config.allowUnfree = true;
 
-      #overlays = with inputs; [
-      #  neovim.overlay
-      #];
+      overlays = with inputs; [
+        #  neovim.overlay
+        nixpkgs-f2k.overlays.compositors
+        nixpkgs-f2k.overlays.window-managers
+      ];
 
       systems.modules = with inputs; [
         home-manager.nixosModules.home-manager
+        nixpkgs-f2k.nixosModules.stevenblack
       ];
     };
 }

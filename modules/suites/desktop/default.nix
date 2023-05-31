@@ -15,9 +15,11 @@ in
     constellation = {
       desktop = {
         awesome = enabled;
+        river = enabled;
       };
 
       cli-apps = {
+        bluetuith = enabled;
         ncmpcpp = enabled;
         ddcutil = enabled;
         ranger = enabled;
@@ -27,9 +29,11 @@ in
 
       apps = {
         keepassxc = enabled;
+        remmina = enabled;
         firefox = enabled;
+        ungoogled-chromium = enabled;
         krita = enabled;
-        microsoft-edge = enabled;
+        picard = enabled;
         tor-browser = enabled;
         imv = enabled;
         mpv = enabled;

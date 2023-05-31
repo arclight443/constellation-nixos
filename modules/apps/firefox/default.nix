@@ -149,16 +149,11 @@ let
           "browser.aboutwelcome.enabled" = false;
           "browser.meta_refresh_when_inactive.disabled" = true;
           "ui.key.menuAccessKeyFocuses" = false;
+          "extensions.pocket.enabled" = false;
+          "browser.tabs.showViewButtonInToolbar" = false;
 
-          #Wavefox
+          #Firefox-CSS
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-          "layout.css.color-mix.enabled" = true;
-          "layout.css.has-selector.enabled" = true;
-          "userChrome.TabCorners.Option6.Enabled" = true;
-          "userChrome.CompactContextMenu-Enabled" = true;
-          "userChrome.FilledMenuIcons-Enabled" = true;
-          "userChrome.OneLine.NavBarFirst.Enabled" = true;
-
 
         }
         // (

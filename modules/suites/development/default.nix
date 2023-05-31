@@ -4,6 +4,10 @@ with lib;
 with lib.internal;
 let
   cfg = config.constellation.suites.development;
+  apps = {
+    insomnia = enabled;
+    dbeaver = enabled;
+  };
   cli-apps = {
     tmux = enabled;
     neovim = enabled;
@@ -25,7 +29,7 @@ in
     ];
 
     constellation = {
-      inherit cli-apps;
+      inherit apps cli-apps;
 
       tools = {
         direnv = enabled;

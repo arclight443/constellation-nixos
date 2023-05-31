@@ -7,7 +7,7 @@ let
 in
 {
   options.constellation.apps.mullvad = with types; {
-    enable = mkBoolOpt false "Whether or not to enable mullvad vpn.";
+    enable = mkBoolOpt false "Whether or not to enable Mullvad VPN.";
   };
 
   config = mkIf cfg.enable {

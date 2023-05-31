@@ -14,6 +14,7 @@ in
     programs.ssh.askPassword = "";
 
     environment.systemPackages = with pkgs; [
+      p7zip
       fzf
       killall
       unzip

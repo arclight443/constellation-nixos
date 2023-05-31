@@ -2,8 +2,8 @@
 set -sg escape-time 0
 
 # Unbind tmux default prefix and set to Ctrl + Space
-unbind C-b
-set -g prefix C-Space
+#unbind C-b
+#set -g prefix C-Space
 
 # Enable mouse control
 set -g mouse on

@@ -17,6 +17,7 @@ in
 
       cli-apps = {
         #flake = enabled;
+        speedtest = enabled;
       };
 
       tools = {
@@ -29,9 +30,11 @@ in
         audio = enabled;
         storage = enabled;
         networking = enabled;
+        thermal = enabled;
       };
 
       security = {
+        age = enabled;
         doas = enabled;
         keyring = enabled;
       };
@@ -44,5 +47,10 @@ in
         xkb = enabled;
       };
     };
+
+    services.xserver.excludePackages = with pkgs; [
+      xterm
+      nano
+    ];
   };
 }

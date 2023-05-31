@@ -29,12 +29,13 @@ in
           noto-fonts-cjk-sans
           noto-fonts-cjk-serif
           (nerdfonts.override { fonts = [ "Hack" "FiraCode" "Iosevka" ]; })
+          font-awesome_5
         ] ++ cfg.fonts;
       fontconfig = {
         defaultFonts = {
-          serif = [ "Kanit" "Noto" ];
-          sansSerif = [ "Kanit" "Noto" ];
-          monospace = [ "Noto" ];
+          serif = [ "Noto Serif Thai" ];
+          sansSerif = [ "Noto Sans Thai" ];
+          monospace = [ "Hack Nerd Font Mono" ];
         };
       };
     };

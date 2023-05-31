@@ -1,9 +1,9 @@
 { pkgs, lib, ... }:
 
 pkgs.fetchFromGitHub {
-  owner = "arclight443";
+  owner = "karamanliev";
   repo = "cascade";
-  rev = "7d788666936ee06acbb69adf8e9a33e6ce0edc25";
-  sha256 = "macR4sHfQGiTEkMbRMuCqh6nsTnWRe8b511eY9ytBt4=";
+  rev = "1f81d4c031f44e5a6fda62e75c75fd123f657ee9";
+  sha256 = "18jvzwnmz7wyzmpg2m1r3ycs1y6da2257xj0xdkqdxif4xxy6ns5";
   name = "firefox-cascade";
 }
