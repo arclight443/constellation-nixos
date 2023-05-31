@@ -14,8 +14,6 @@ with lib.internal;
     hardware.laptop.common = enabled;
     hardware.laptop.tabletpc = enabled;
 
-    security.yubikey-u2f = enabled;
-
     desktop.x11.common = {
       gpu = "amd";
       uiScaling = "normal";
