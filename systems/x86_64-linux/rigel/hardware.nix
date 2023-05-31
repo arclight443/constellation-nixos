@@ -37,6 +37,6 @@ in
     { device = "/dev/disk/by-label/SWAP"; }
   ];
 
-  networking.hostName = "altair";
+  networking.hostName = "rigel";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
