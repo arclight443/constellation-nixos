@@ -11,11 +11,6 @@ in
     enable = mkBoolOpt false "Whether or not to enable common X11 settings.";
     gpu = mkOpt (enum [ "nvidia" "amd" ]) "amd" "GPU in-use.";
     uiScaling = mkOpt (enum [ "normal" "enlarged" ]) "normal" "UI scaling to use.";
-    autoRotate =
-      {
-        enable = mkBoolOpt false "Whether or not to enable screen autorotate";
-        touchDevice = mkOpt str "" "Touch device name for auto-rotation";
-      };
 
   };
 
@@ -32,6 +27,7 @@ in
     ];
 
     services = {
+      getty.autologinUser = "${config.constellation.user.name}";
       xserver = {
         enable = true;
         videoDrivers = if cfg.gpu == "nvidia" then [ "nvidia" ] else [ "amdgpu" ];
@@ -43,39 +39,39 @@ in
           Option "BlankTime" "0"
         '';
 
-        displayManager = {
+        #displayManager = {
 
-          autoLogin = {
-            enable = true;
-            user = "${config.constellation.user.name}";
-          };
+        #  autoLogin = {
+        #    enable = true;
+        #    user = "${config.constellation.user.name}";
+        #  };
 
-          lightdm = {
-            enable = true;
-            greeters.gtk = {
-              enable = true;
-              theme = {
-                name = "gruvbox-dark";
-                package = pkgs.gruvbox-dark-gtk;
-              };
-              iconTheme = {
-                name = "oomox-gruvbox-dark";
-                package = pkgs.gruvbox-dark-icons-gtk;
-              };
-              cursorTheme = {
-                name = "capitaine-cursors";
-                package = pkgs.capitaine-cursors;
-              };
-            };
-          };
+        #  lightdm = {
+        #    enable = true;
+        #    greeters.gtk = {
+        #      enable = true;
+        #      theme = {
+        #        name = "gruvbox-dark";
+        #        package = pkgs.gruvbox-dark-gtk;
+        #      };
+        #      iconTheme = {
+        #        name = "oomox-gruvbox-dark";
+        #        package = pkgs.gruvbox-dark-icons-gtk;
+        #      };
+        #      cursorTheme = {
+        #        name = "capitaine-cursors";
+        #        package = pkgs.capitaine-cursors;
+        #      };
+        #    };
+        #  };
 
-          defaultSession = "none+awesome";
+        #  defaultSession = "none+awesome";
 
-          xserverArgs = [
-            "-dpms"
-          ];
+        #  xserverArgs = [
+        #    "-dpms"
+        #  ];
 
-        };
+        #};
 
         libinput = {
           enable = true;

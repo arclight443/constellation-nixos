@@ -55,11 +55,6 @@ in
         recursive = true;
       };
 
-      home.configFile."awesome/bling" = {
-        source = pkgs.constellation.bling;
-        recursive = true;
-      };
-
       home.extraOptions = {
         home.packages = with pkgs; [
           (buildEnv
@@ -76,7 +71,6 @@ in
 
     services.xserver.windowManager.awesome = {
       enable = true;
-      package = pkgs.awesome-git;
       luaModules = with pkgs.luaPackages; [
         luarocks
         luadbi-mysql

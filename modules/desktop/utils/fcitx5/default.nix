@@ -31,7 +31,6 @@ in
       };
 
       configFile = {
-        "fcitx5/profile".source = ./config/profile;
         "fcitx5/conf/classicui.conf".source = ./config/conf/classicui.conf;
       };
     };

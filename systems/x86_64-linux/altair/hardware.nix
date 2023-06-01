@@ -9,7 +9,7 @@ in
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_1;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     initrd = {
       availableKernelModules =

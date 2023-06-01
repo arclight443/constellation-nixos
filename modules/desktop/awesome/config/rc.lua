@@ -175,13 +175,6 @@ beautiful.systray_icon_spacing = 4;
 
 -- }}}
 
--- {{{ Bling
-
-local bling                    = require("bling")
-bling.module.flash_focus.enable()
-
--- }}}
-
 -- {{{ Autostart windowless processes
 
 -- This function will run once every time Awesome is started
@@ -315,14 +308,6 @@ globalkeys = mytable.join(
 		end,
 		{ description = "suspend/resume notifications", group = "hotkeys" }),
 
-	-- Take a screenshot
-	-- https://github.com/lcpz/dots/blob/master/bin/screenshot
-	awful.key({ modkey }, "p", function() os.execute("screenshot") end,
-		{ description = "take a screenshot", group = "hotkeys" }),
-
-	-- X screen locker
-	awful.key({ modkey, "Control" }, "l", function() os.execute(scrlocker) end,
-		{ description = "lock screen", group = "hotkeys" }),
 
 	-- Show help
 	awful.key({ altkey, }, "s", hotkeys_popup.show_help,
@@ -335,26 +320,6 @@ globalkeys = mytable.join(
 		{ description = "view next", group = "tag" }),
 	awful.key({ altkey, }, "Escape", awful.tag.history.restore,
 		{ description = "go back", group = "tag" }),
-
-	-- Non-empty tag browsing
-	awful.key({ modkey }, "Left", function() lain.util.tag_view_nonempty(-1) end,
-		{ description = "view  previous nonempty", group = "tag" }),
-	awful.key({ modkey }, "Right", function() lain.util.tag_view_nonempty(1) end,
-		{ description = "view  previous nonempty", group = "tag" }),
-
-	-- Default client focus
-	awful.key({ modkey, }, "j",
-		function()
-			awful.client.focus.byidx(1)
-		end,
-		{ description = "focus next by index", group = "client" }
-	),
-	awful.key({ modkey, }, "k",
-		function()
-			awful.client.focus.byidx(-1)
-		end,
-		{ description = "focus previous by index", group = "client" }
-	),
 
 	-- By-direction client focus
 	awful.key({ altkey }, "j",
@@ -474,12 +439,6 @@ globalkeys = mytable.join(
 	-- Dropdown application
 	awful.key({ altkey, }, "z", function() awful.screen.focused().quake:toggle() end,
 		{ description = "dropdown application", group = "launcher" }),
-
-	-- Widgets popups
-	awful.key({ modkey, }, "c", function() if beautiful.cal then beautiful.cal.show(7) end end,
-		{ description = "show calendar", group = "widgets" }),
-	awful.key({ modkey, }, "h", function() if beautiful.fs then beautiful.fs.show(7) end end,
-		{ description = "show filesystem", group = "widgets" }),
 
 	-- Screen brightness
 	awful.key({}, "XF86MonBrightnessUp", function() os.execute("light -A 10") end,

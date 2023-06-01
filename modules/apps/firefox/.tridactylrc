@@ -18,9 +18,9 @@ set searchurls.crates https://crates.io/search?q=
 set searchurls.gh https://github.com/search?utf8=✓&q=
 
 set searchurls.nw https://nixos.wiki/index.php?search=
-set searchurls.np https://search.nixos.org/packages?&query=
+set searchurls.np https://search.nixos.org/packages?channel=23.05&query=
 set searchurls.npu https://search.nixos.org/packages?channel=unstable&query=
-set searchurls.no https://search.nixos.org/options?&query=
+set searchurls.no https://search.nixos.org/options?channel=23.05&query=
 set searchurls.nou https://search.nixos.org/options?channel=unstable&query=
 
 set searchurls.ubj https://packages.ubuntu.com/search?searchon=names&suite=jammy&section=all&keywords=

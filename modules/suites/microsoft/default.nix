@@ -5,7 +5,7 @@ with lib.internal;
 let
   cfg = config.constellation.suites.microsoft;
   apps = {
-    microsoft-edge = enabled;
+    #microsoft-edge = enabled;
   };
 
 in

@@ -22,6 +22,7 @@ in
       jq
       clac
       wget
+      update-nix-fetchgit
     ];
   };
 }

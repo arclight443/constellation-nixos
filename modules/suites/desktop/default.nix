@@ -14,13 +14,13 @@ in
   config = mkIf cfg.enable {
     constellation = {
       desktop = {
-        awesome = enabled;
-        river = enabled;
+        hyprland = enabled;
       };
 
       cli-apps = {
         bluetuith = enabled;
         ncmpcpp = enabled;
+        miniplayer = enabled;
         ddcutil = enabled;
         ranger = enabled;
         ytdlp = enabled;

@@ -12,6 +12,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    services.chrome-pwa.enable = true;
+
     constellation.home.extraOptions = {
 
       programs.chromium = {
