@@ -12,6 +12,7 @@ in
   };
 
   config = mkIf cfg.enable {
+
     environment.systemPackages = with pkgs; [
       #constellation.neovim
       inputs.neovim.packages.x86_64-linux.neovim
@@ -37,7 +38,7 @@ in
         programs.fish.shellAliases.vimdiff = "nvim -d";
       };
 
-
     };
+
   };
 }

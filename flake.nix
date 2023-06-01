@@ -60,5 +60,6 @@
         home-manager.nixosModules.home-manager
         chrome-pwa.nixosModule
       ];
+
     };
 }
