@@ -23,6 +23,7 @@ in
       clac
       wget
       update-nix-fetchgit
+      nvd
     ];
   };
 }

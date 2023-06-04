@@ -13,14 +13,24 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      ueberzug
+      ueberzugpp
       ranger
     ];
 
-    constellation.home.configFile."ranger/" =
-      {
-        source = ./config;
-        recursive = true;
+    constellation.home = {
+
+      extraOptions = {
+        home.packages = with pkgs; [
+          ranger
+          ueberzugpp
+        ];
       };
+
+      configFile."ranger/" =
+        {
+          source = ./config;
+          recursive = true;
+        };
+    };
   };
 }

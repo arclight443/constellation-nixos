@@ -28,6 +28,7 @@ in
         flac
         mpc-cli
         ffmpeg
+        ueberzugpp
       ];
 
       services = {

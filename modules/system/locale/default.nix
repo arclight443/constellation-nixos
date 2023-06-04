@@ -31,18 +31,6 @@ in
       "ja_JP.UTF-8/UTF-8"
     ];
 
-    constellation.home.extraOptions = {
-
-      home.packages = with pkgs; [
-        fcitx5-mozc
-      ];
-
-      i18n.inputMethod = {
-        enabled = "fcitx5";
-        fcitx5.addons = with pkgs; [ fcitx5-mozc ];
-      };
-    };
-
     console = { keyMap = mkForce "us"; };
   };
 }

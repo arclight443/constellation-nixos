@@ -33,11 +33,11 @@ in
         firefox = enabled;
         ungoogled-chromium = enabled;
         krita = enabled;
-        picard = enabled;
         tor-browser = enabled;
         imv = enabled;
         mpv = enabled;
         mullvad = enabled;
+        picard = enabled;
         thunar = enabled;
       };
 

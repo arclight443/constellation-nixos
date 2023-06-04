@@ -38,6 +38,9 @@
       url = "github:luis-hebendanz/nixos-chrome-pwa";
     };
 
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
   };
 
   outputs = inputs:

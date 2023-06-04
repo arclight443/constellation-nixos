@@ -12,6 +12,12 @@ in
   };
 
   config = mkIf cfg.enable {
+    constellation.system.env = {
+      "NIX_PROFILES" = "${concatStringsSep " " (reverseList config.environment.profiles)}";
+      "GTK_IM_MODULE" = "fcitx";
+      "QT_IM_MODULE" = "fcitx";
+      "XMODIFIERS" = "@im=fcits";
+    };
     constellation.home = {
       extraOptions = {
         home.packages = with pkgs; [

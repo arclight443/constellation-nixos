@@ -37,7 +37,7 @@ in
     programs.zsh = {
       enable = true;
       autosuggestions.enable = true;
-      histFile = "$XDG_CACHE_HOME/zsh.history";
+      histFile = "$XDG_CACHE_HOME/zsh/history";
     };
 
     constellation.home = {
@@ -51,7 +51,7 @@ in
         "Repo/.keep".text = "";
         ".face".source = cfg.icon;
         "Pictures/${
-          cfg.icon.fileName or (builtins.baseNameOf cfg.icon)
+        cfg.icon.fileName or (builtins.baseNameOf cfg.icon)
         }".source = cfg.icon;
       };
 
@@ -138,7 +138,7 @@ in
       # system to select).
       uid = 1000;
 
-      extraGroups = [ "wheel" ] ++ cfg.extraGroups;
+      extraGroups = [ "wheel" "input" ] ++ cfg.extraGroups;
     } // cfg.extraOptions;
   };
 }

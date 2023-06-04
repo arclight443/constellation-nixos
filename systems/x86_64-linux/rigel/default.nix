@@ -14,12 +14,12 @@ with lib.internal;
     hardware.laptop.common = enabled;
     hardware.laptop.tabletpc = enabled;
 
-    desktop.x11.common = {
+    desktop.wayland.common = {
       gpu = "amd";
       uiScaling = "normal";
     };
   };
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 }
 

@@ -12,7 +12,13 @@ in
   };
 
   config = mkIf cfg.enable {
+
     constellation = {
+
+      system.env = {
+        "NIXOS_OZONE_WL" = "1";
+      };
+
       desktop = {
         wayland = {
           common = enabled;
@@ -26,10 +32,12 @@ in
             display = "wayland";
           };
         };
+
       };
 
-      system.env = {
-        "NIXOS_OZONE_WL" = "1";
+      home.configFile = {
+        "hypr/wall.png".source = ./wall.png;
+        "hypr/hyprland.conf".source = ./hyprland.conf;
       };
 
     };
@@ -41,6 +49,7 @@ in
         hidpi = true;
       };
     };
+
   };
 
 }

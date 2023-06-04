@@ -22,6 +22,7 @@ in
         enable = true;
         videoDrivers = if cfg.gpu == "nvidia" then [ "nvidia" ] else [ "amdgpu" ];
         displayManager.lightdm.enable = false;
+
       };
 
     };
@@ -30,13 +31,20 @@ in
       desktop.utils = {
         fcitx5 = enabled;
         kitty = enabled;
-        gtk = enabled;
-        qt = enabled;
+        gtk = {
+          enable = true;
+          uiScaling = "normal";
+        };
+        qt = {
+          enable = true;
+          uiScaling = "normal";
+        };
       };
 
       desktop.wayland = {
         swww = enabled;
-        wl-clipboard = enabled;
+        waybar = enabled;
+        misc = enabled;
       };
 
       home.extraOptions = {

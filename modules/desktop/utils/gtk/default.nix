@@ -26,6 +26,10 @@ in
 
     constellation.home.extraOptions = {
 
+      home.packages = with pkgs; [
+        gtk4
+      ];
+
       gtk = {
         enable = true;
         theme = {

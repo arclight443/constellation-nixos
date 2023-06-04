@@ -19,6 +19,11 @@ in
       programs.chromium = {
         enable = true;
         package = pkgs.ungoogled-chromium;
+        commandLineArgs = [
+          "--enable-features=UseOzonePlatform"
+          "--ozone-platform=x11"
+          "--gtk-version=4"
+        ];
         extensions =
           let
             createChromiumExtensionFor = browserVersion: { id, sha256, version }:

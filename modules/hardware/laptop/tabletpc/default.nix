@@ -11,10 +11,12 @@ in
 
   config = mkIf cfg.enable {
 
-    hardware.sensor.iio.enable = true;
+    hardware = {
+      sensor.iio.enable = true;
+    };
+
     services.acpid.enable = true;
     services.gnome.at-spi2-core.enable = true;
-    constellation.desktop.utils.onboard = enabled;
 
   };
 

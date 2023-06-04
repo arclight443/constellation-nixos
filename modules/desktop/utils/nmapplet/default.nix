@@ -12,9 +12,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      networkmanagerapplet
-    ];
+    programs.nm-applet = {
+      enable = true;
+      indicator = true;
+    };
 
   };
 }

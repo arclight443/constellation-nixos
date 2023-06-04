@@ -20,7 +20,7 @@ in
   config = {
     constellation.home.extraOptions = {
 
-      imports = [ inputs.arkenfox.hmModules.default ];
+      imports = [ inputs.arkenfox.hmModules.default inputs.hyprland.homeManagerModules.default ];
 
       home.stateVersion = config.system.stateVersion;
       home.file = mkAliasDefinitions options.constellation.home.file;
